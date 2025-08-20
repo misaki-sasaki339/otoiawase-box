@@ -13,7 +13,7 @@ class ContactRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -30,9 +30,22 @@ class ContactRequest extends FormRequest
             'email'=>'required',
             'tel'=>'required',
             'address'=>'required',
+            'category_id'=>'required',
             'detail'=>'required'
         ];
     }
 
-    //エラー時の出力を記述
+    public function messages()
+    {
+        return [
+            'first_name.required'=>'姓を入力してください',
+            'last_name.required'=>'名を入力してください',
+            'gender.required'=>'性別を選択してください',
+            'email.required'=>'メールアドレスを入力してください',
+            'tel.required'=>'電話番号を入力してください',
+            'address.required'=>'住所を入力してください',
+            'category_id.required'=>'お問い合わせの種類を選択してください',
+            'detail.required'=>'お問い合わせの内容を入力してください',
+        ];
+    }
 }
