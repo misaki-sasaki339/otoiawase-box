@@ -1,0 +1,40 @@
+
+.thankYou{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #8b7969;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    z-index: 1;
+}
+
+.home-button__btn{
+    margin-top: 30px;
+    font-family: "Tinos", serif;
+    background-color: #8b7969;
+    color: #f5f5f5;
+    font-size: 16px;
+    border: none;
+    height: 48px;
+    width: 160px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.background-text{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18vw;
+    z-index: -1; /* 背景として配置し、通常テキストより後ろに表示 */
+    white-space: nowrap; 
+    color: #8b7969;
+    opacity: 0.1;
+    font-family: "Tinos", serif;
+    pointer-events: none;
+    user-select: none;
+}

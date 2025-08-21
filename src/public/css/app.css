@@ -1,0 +1,24 @@
+.header{
+    max-width: 1230px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    border-bottom: 1px solid #f4f4f4;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__inner{
+    align-items: center;
+    display: flex;
+}
+
+.header__inner-logo{
+    font-size: 32px;
+    color: #8b7969;
+    text-align: center;
+    font-family: "Tinos", serif;
+}
