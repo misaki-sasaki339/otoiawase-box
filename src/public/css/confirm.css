@@ -26,6 +26,7 @@
     border: 1px solid #E9E9E9;
     font-size: 14px;
     text-align: left;
+    border-radius: 1px;
 }
 
 .confirm-table__inner{
@@ -89,7 +90,7 @@
     border: none;
     height: 32px;
     width: 120px;
-    border-radius: 3px;
+    border-radius: 1px;
     cursor: pointer;
 }
 
