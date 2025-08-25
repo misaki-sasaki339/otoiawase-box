@@ -26,6 +26,7 @@ class CreateContactsTable extends Migration
             $table->text('detail');
             $table->timestamp('created_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
+            $table->softDeletes();
         });
     }
 

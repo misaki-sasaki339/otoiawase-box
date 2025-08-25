@@ -21,7 +21,7 @@ Laravel環境構築
 + MySQL 8.0+
 
 ## ER図
-![ER Diagram](src/database/ER_diagram/otoiawase-box.png)
+![ER Diagram](src/database/ER_diagram/ER_otoiawase.png)
 
 ## URL
 + 開発環境：http://localhost/

@@ -19,7 +19,7 @@
     border: none;
     height: 32px;
     width: 120px;
-    border-radius: 3px;
+    border-radius: 1px;
     cursor: pointer;
 }
 
@@ -29,7 +29,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 18vw;
-    z-index: -1; /* 背景として配置し、通常テキストより後ろに表示 */
+    z-index: -1; 
     white-space: nowrap; 
     color: #8b7969;
     opacity: 0.1;

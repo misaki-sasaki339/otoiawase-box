@@ -16,6 +16,7 @@
             <div class="header__inner-logo">
                 <p>FashionablyLate</p>
             </div>
+            @yield('nav')
         </div>
     </header>
 

@@ -16,9 +16,15 @@ class ContactFactory extends Factory
      */
     public function definition()
     {
+        static $categoryIds;
+
+        if(!$categoryIds){
+            $categoryIds = Category::pluck('id')->toArray();
+        }
+
         return [
             'first_name' => $this->faker->firstName,
-            'category_id'=>Category::inRandomOrder()->first()->id,
+            'category_id'=>$this->faker->randomElement($categoryIds),
             'last_name' => $this->faker->lastName,
             'gender' => $this->faker->randomElement([1,2,3]),
             'email' => $this->faker->unique()->safeEmail,

@@ -1,15 +1,32 @@
-.contact-form__content {
-    margin: 0 auto;
-    padding: 16px 16px;
-    max-width: 1230px;
+.error-message{
+    color: #C96A6A;
+    margin: 0;
+    font-size: 11px;
+    max-width: 100%;
 }
+
+.input__name-wrapper{
+    flex: 1;
+    min-width: 0;
+}
+
+.input__tel-wrapper{
+    flex: 1;
+    min-width: 0;
+}
+
+.contact-form__content {
+    width: 850px;
+    margin: 0 auto;
+}
+
 
 .contact-form__heading p {
     margin: 0;
 }
 
 .contact-form__heading {
-    padding: 8px;
+    padding: 12px;
     text-align: center;
     font-family: "Tinos", serif;
     color: #8b7969;
@@ -17,28 +34,25 @@
 }
 
 .form {
-    width: 70%;
-    max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    width: 70%;
 }
 
 .form__group {
-    padding: 8px 0;
-    margin: 8px 0;
+    padding-bottom: 24px;
     display: flex;
     justify-content: space-between;
     width: 100%;
     color: #8b7969;
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 12px;
     align-items: center;
 }
 
 .form__group:has(.form__input--textarea) {
     align-items: flex-start;
+    height: 120px;
 }
-
 
 .form__group-title {
     text-align: left;
@@ -52,16 +66,16 @@
 .form__group-content {
     width: 70%;
     text-align: left;
+    height: 32px;
+    align-content: center;
 }
 
 .form__input--text {
     display: flex;
     align-items: center;
-}
-
-.form__input--text {
     gap: 16px;
 }
+
 
 .form__input--radio label {
     accent-color: #8b7969;
@@ -81,7 +95,7 @@
     line-height: 20px;
     color: #8b7969;
     background-color: #f5f5f5;
-    border-radius: 3px;
+    border-radius: 1px;
     border: none;
 }
 
@@ -89,17 +103,17 @@
 .form__input--textarea textarea {
     width: 100%;
     display: flex;
-    padding: 10px;
-    height: 34px;
-    border-radius: 3px;
+    padding: 8px;
+    border-radius: 1px;
     font-family: "Tinos", serif;
     background-color: #f5f5f5;
     border: none;
     appearance: none;
+    color: #8b7969;
 }
 
 .form__input--textarea textarea {
-    height: 120px;
+    height: 100px;
 }
 
 .form__input--text span {
@@ -107,8 +121,14 @@
     margin: 0 4px;
 }
 
+input:focus,
+select:focus,
+textarea:focus{
+    outline: 1px solid #8b7969;
+}
+
 .form__button {
-    margin-top: 30px;
+    padding: 20px 0 32px;
 }
 
 .form__button-submit {
@@ -118,6 +138,6 @@
     border: none;
     height: 32px;
     width: 120px;
-    border-radius: 3px;
+    border-radius: 1px;
     cursor: pointer;
 }
