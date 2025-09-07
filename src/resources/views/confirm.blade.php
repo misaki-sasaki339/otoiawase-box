@@ -67,7 +67,7 @@
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">お問い合わせ内容</th>
                     <td class="confirm-table__textarea">
-                        <textarea name="detail" readonly>"{{ $contact->detail }}"</textarea>
+                        <textarea name="detail" readonly>{{ $contact->detail }}</textarea>
                     </td>
                 </tr>
             </table>
