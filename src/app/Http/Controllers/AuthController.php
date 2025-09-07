@@ -10,6 +10,10 @@ use App\Models\Contact;
 use App\Models\User;
 use App\Models\Category;
 
+use App\Exports\ContactExport;
+use Maatwebsite\Excel\Excel as ExcelType;
+use Maatwebsite\Excel\Facades\Excel;
+
 class AuthController extends Controller
 {
     //管理画面の表示
@@ -42,12 +46,38 @@ class AuthController extends Controller
     public function search(Request $request){
         $contacts = Contact::with('category')->KeywordSearch($request->keyword)
         ->GenderSearch($request->gender)->CategorySearch($request->category_id)
-        ->DateSearch($request->date)->paginate(7);
+        ->DateSearch($request->created_at)->paginate(7);
         $categories = Category::all();
+
+        //検索結果をセッションに保存
+        session([
+            'contact_search' => $request->only(['keyword', 'gender', 'category_id', 'created_at'])
+        ]);
         
         //検索結果をリンクに引継ぎ
         $contacts->appends($request->all());
         return view('auth.admin', compact('contacts', 'categories'));
+
+    }
+
+    // エクスポート
+    public function export(){
+        $search = session('contact_search', []); //セッションから検索条件を取得
+        $query = Contact::with('category');
+
+        if (!empty($search['keyword'])){
+            $query->KeywordSearch($search['keyword']);
+        }
+        if (!empty($search['category_id'])){
+            $query->CategorySearch($search['category_id']);
+        }
+        if (!empty($search['created_at'])){
+            $query->DateSearch($search['created_at']);
+        }
+
+        $contacts = $query->get();
+
+        return Excel::download(new ContactExport($contacts), 'output_contact_data.csv', ExcelType::CSV);
     }
 
 }
