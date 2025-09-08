@@ -51,7 +51,7 @@ DB_PASSWORD=laravel_pass
 + MySQL 8.0+
 
 ## ER図
-![ER Diagram](database/ER_diagram/ER.png)
+![ER Diagram](src/database/ER_diagram/ER.png)
 
 ## URL
 + 開発環境：http://localhost/
