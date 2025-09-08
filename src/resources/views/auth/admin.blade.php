@@ -25,6 +25,7 @@
     <div class="content__wrapper">
         <div class="search__content">
             <form action="{{ route('search') }}" class="search-form" method="get">
+                @csrf
                 <input name="keyword" type="text" placeholder="名前やメールアドレスを入力してください" value="{{ request('keyword') }}">
                 <select name="gender" id="">
                     <option value="" disabled selected>性別</option>  
@@ -47,7 +48,10 @@
         </div>
         <div class="admin-utilities">
             <div class="export__button">
-                <button class='export__button-btn'>エクスポート</button>
+                <form action="{{ route('export') }}" class="contact-export" method="post">
+                    @csrf
+                    <input type="submit" class="export__button-btn" value="エクスポート">
+                </form>
             </div>
             {{ $contacts->links('pagination::bootstrap-4') }}
         </div>

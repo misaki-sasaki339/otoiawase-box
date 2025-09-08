@@ -30,6 +30,7 @@ Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('l
 Route::middleware('auth')->group(function (){
 Route::get('/admin', [AuthController::class, 'admin'])->name('admin');
 Route::get('admin/search',[AuthController::class, 'search'])->name('search');
+Route::post('/admin/export', [AuthController::class, 'export'])->name('export');
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 Route::delete('/admin/delete',[AuthController::class, 'destroy'])->name('destroy');
 });
